@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Creación de Velas y Jabones Naturales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary-terracotta: #b07d62; 
+            --accent-honey: #e9c46a;       
+            --soft-eucalyptus: #84a59d;    
+            --deep-wood: #432818;          
+            --vanilla-white: #fdfaf5;      
+            --vibrant-red: #c53030; 
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--vanilla-white);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--deep-wood);
+        }
+
+        .bg-terracotta { background-color: var(--primary-terracotta); }
+        .text-terracotta { color: var(--primary-terracotta); }
+        .text-red-vibrant { color: var(--vibrant-red); }
+        .border-red-vibrant { border-color: var(--vibrant-red); }
+        
+        .pulse-buy {
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(176, 125, 98, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(176, 125, 98, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(176, 125, 98, 0); }
+        }
+
+        .image-glow {
+            box-shadow: 0 25px 50px -12px rgba(67, 40, 24, 0.2);
+        }
+
+        .img-interactive-effect {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+        }
+
+        .img-interactive-effect:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
+        }
+
+        .img-interactive-effect:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        .highlight-text {
+            background: linear-gradient(120deg, rgba(176, 125, 98, 0.2) 0%, rgba(176, 125, 98, 0.2) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 80%;
+            padding: 0 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="bg-terracotta text-white text-center py-2 text-sm font-semibold tracking-wide px-4">
+        ✨ OFERTA DE LANZAMIENTO: -50% EN LA FORMACIÓN COMPLETA ✨
+    </div>
+
+    <nav class="py-6 px-4 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="text-2xl font-bold text-gray-800 tracking-tighter">
+            Taller<span class="text-terracotta">Natural</span>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Columna Izquierda: Imagen Principal con Enlace -->
+            <div class="w-full lg:w-1/2">
+                <a href="https://go.hotmart.com/I104098872V" class="relative group block">
+                    <!-- Elementos decorativos de fondo -->
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-[rgba(233,196,106,0.15)] rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[rgba(132,165,157,0.15)] rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                    
+                    <div class="relative rounded-3xl overflow-hidden image-glow border-2 border-white shadow-2xl cursor-pointer img-interactive-effect">
+                        
+                        <!-- Overlay suave -->
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors z-10"></div>
+
+                        <!-- Botón de Play Central Estático -->
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <div class="w-20 h-20 bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/50">
+                                <i class="fas fa-play text-3xl ml-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- Imagen principal -->
+                        <img src="imagenes\img1.jpg" 
+                             alt="[Imagen de velas y jabones artesanales del curso]" 
+                             class="w-full h-[500px] object-cover"
+                             onerror="this.src='https://via.placeholder.com/500x500?text=Vista+previa+del+curso'">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Columna Derecha: Texto de Venta -->
+            <div class="w-full lg:w-1/2 space-y-8">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight text-gray-900 mb-4">
+                        Crea tus propias <span class="italic text-terracotta">Velas & Jabones</span> 100% Naturales
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed text-justify">
+                        Transforma tu hogar en un spa y lanza tu propia marca artesanal. Un método paso a paso, incluso si nunca has fabricado nada con tus manos, con este completo <span class="highlight-text">curso online</span>.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 py-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 bg-[rgba(233,196,106,0.15)] p-2 rounded-lg text-terracotta"><i class="fas fa-magic"></i></div>
+                        <p class="text-sm font-medium">Ingredientes Eco-responsables</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 bg-[rgba(233,196,106,0.15)] p-2 rounded-lg text-terracotta"><i class="fas fa-play-circle"></i></div>
+                        <p class="text-sm font-medium">Videos HD paso a paso</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 bg-[rgba(233,196,106,0.15)] p-2 rounded-lg text-terracotta"><i class="fas fa-award"></i></div>
+                        <p class="text-sm font-medium">Certificado de finalización</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 bg-[rgba(233,196,106,0.15)] p-2 rounded-lg text-terracotta"><i class="fas fa-heart"></i></div>
+                        <p class="text-sm font-medium">Comunidad privada de alumnos</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 bg-[rgba(233,196,106,0.15)] p-2 rounded-lg text-terracotta"><i class="fas fa-infinity"></i></div>
+                        <p class="text-sm font-medium">Acceso de por vida</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 bg-[rgba(233,196,106,0.15)] p-2 rounded-lg text-terracotta"><i class="fas fa-file-pdf"></i></div>
+                        <p class="text-sm font-medium">Guías descargables en PDF</p>
+                    </div>
+                </div>
+
+                <div id="achat" class="space-y-4">
+                    <div class="flex flex-col mb-4 bg-white/50 p-4 rounded-2xl border-l-4 border-red-vibrant shadow-sm">
+                        <p class="text-red-vibrant font-bold text-xs mb-2 tracking-widest uppercase"><i class="fas fa-fire mr-2"></i>Cupos limitados con descuento</p>
+                        <div class="flex items-baseline gap-3">
+                            <span class="text-4xl font-bold text-gray-900">$35 USD</span>
+                            <span class="text-xl text-red-vibrant/60 line-through">$70 USD</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://go.hotmart.com/I104098872V" 
+                       class="pulse-buy block w-full text-center py-5 bg-terracotta text-white rounded-2xl font-bold text-xl hover:brightness-110 transition-all shadow-lg hover:shadow-xl">
+                        PARA MÁS INFORMACIÓN TOCA AQUÍ
+                    </a>
+                    
+                    <div class="flex items-center justify-center gap-6 text-gray-400 text-[10px] uppercase tracking-widest py-2">
+                        <span class="flex items-center"><i class="fas fa-shield-alt mr-2"></i> Pago seguro Hotmart</span>
+                        <span class="flex items-center"><i class="fas fa-calendar-check mr-2"></i> Garantía de 7 días</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 border-t border-gray-100 text-center bg-white">
+        <div class="text-2xl font-bold text-gray-800 tracking-tighter mb-4">
+            Taller<span class="text-terracotta">Natural</span>
+        </div>
+        <p class="text-sm text-gray-400 mb-2">&copy; 2026 Taller Natural - Formación online. Todos los derechos reservados.</p>
+        <p class="text-[10px] text-gray-300 px-4 max-w-xl mx-auto italic">Hotmart es una plataforma de distribución de contenidos digitales. La mención de la plataforma no constituye una recomendación ni garantía de éxito comercial.</p>
+    </footer>
+
+</body>
+</html>
