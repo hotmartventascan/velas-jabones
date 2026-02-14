@@ -1,0 +1,456 @@
+/* Stitch Generated Styles for Manitas Creativas */
+
+body {
+    min-height: max(884px, 100dvh);
+}
+
+/* Ocultar scrollbar - Reglas generales y específicas con máxima prioridad */
+.hide-scrollbar::-webkit-scrollbar,
+.carousel-container::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    background: transparent !important;
+}
+
+.hide-scrollbar,
+.carousel-container {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+/* Reglas específicas por ID para cada carrusel */
+#candles-carousel::-webkit-scrollbar,
+#soaps-carousel::-webkit-scrollbar,
+#testimonios-velas::-webkit-scrollbar,
+#testimonios-jabones::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+}
+
+#candles-carousel,
+#soaps-carousel,
+#testimonios-velas,
+#testimonios-jabones {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow: -moz-scrollbars-none !important;
+}
+
+/* Firefox adicional */
+@-moz-document url-prefix() {
+    .hide-scrollbar,
+    .carousel-container {
+        scrollbar-width: none !important;
+        overflow: -moz-scrollbars-none !important;
+    }
+}
+
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(243, 240, 255, 1) 100%);
+}
+
+.dark .hero-overlay {
+    background: linear-gradient(to bottom, rgba(32, 28, 18, 0) 0%, rgba(32, 28, 18, 0.3) 60%, rgba(15, 23, 42, 1) 100%);
+}
+
+.carousel-container {
+    scroll-behavior: smooth;
+}
+
+/* Animaciones personalizadas */
+@keyframes pulse-soft {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(152, 216, 200, 0.4);
+    }
+
+    70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 15px rgba(152, 216, 200, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(152, 216, 200, 0);
+    }
+}
+
+.animate-pulse-cta {
+    animation: pulse-soft 2s infinite;
+}
+
+.timer-highlight {
+    color: #daaa2f;
+    text-shadow: 0 0 15px rgba(218, 170, 47, 0.2);
+}
+
+/* Animación de urgencia para el timer */
+@keyframes urgent-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#timer-mins,
+#timer-secs {
+    animation: urgent-pulse 1s infinite ease-in-out;
+}
+
+@keyframes bounce-slow {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Responsive: ocultar texto en móviles muy pequeños */
+@media (max-width: 380px) {
+    .fixed.bottom-6.right-6>div {
+        display: none;
+    }
+
+    .fixed.bottom-6.right-6 {
+        padding: 1rem;
+    }
+}
+
+/* Lightbox para imágenes de testimonios */
+#image-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+#image-lightbox.active {
+    display: flex !important;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+#image-lightbox.active img {
+    animation: zoomIn 0.3s ease-in-out forwards;
+}
+
+/* Animación de cierre */
+#image-lightbox.closing {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+#image-lightbox.closing img {
+    animation: zoomOut 0.3s ease-in-out forwards;
+}
+
+#image-lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    /* Forzar posición centrada sin desplazamiento */
+    position: static !important;
+    transform-origin: center center !important;
+    margin: auto;
+    display: block;
+}
+
+#image-lightbox .close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    background: rgba(218, 170, 47, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(218, 170, 47, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+}
+
+#image-lightbox .close-lightbox:hover {
+    background: rgba(218, 170, 47, 0.9);
+    border-color: rgba(218, 170, 47, 1);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(218, 170, 47, 0.6);
+}
+
+/* Animaciones del lightbox */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+}
+
+/* Cursor personalizado para imágenes clickeables */
+.testimonial-image {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Desactivar hover en lightbox */
+#image-lightbox img:hover {
+    transform: none !important;
+    filter: none !important;
+}
+
+/* Efecto de overlay sutil en hover */
+.testimonial-image:hover::after {
+    content: '🔍';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: pulseIcon 0.5s ease-in-out;
+}
+
+@keyframes pulseIcon {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Responsive para lightbox */
+@media (max-width: 768px) {
+    #image-lightbox img {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+    
+    #image-lightbox .close-lightbox {
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+    }
+}
+
+/* Cursor personalizado para el video */
+#main-video {
+    cursor: pointer;
+}
+
+/* Contenedor del video con indicador de play/pause */
+.aspect-video {
+    position: relative;
+}
+
+/* ============ ICONO DE PLAY (cuando está pausado) ============ */
+
+/* Círculo de fondo para play */
+.aspect-video.video-paused::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(218, 170, 47, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 15px rgba(218, 170, 47, 0.4);
+    border: 3px solid white;
+}
+
+/* Triángulo de play */
+.aspect-video.video-paused::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid white;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar icono de play al hacer hover */
+.aspect-video.video-paused:hover::before,
+.aspect-video.video-paused:hover::after {
+    opacity: 1;
+}
+
+/* Animación de pulso para play */
+.aspect-video.video-paused:hover::before {
+    animation: pulsePlay 1.5s ease-in-out infinite;
+}
+
+/* ============ ICONO DE PAUSA (cuando está reproduciéndose) ============ */
+
+/* Círculo de fondo para pausa */
+.aspect-video.video-playing::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(218, 170, 47, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 15px rgba(218, 170, 47, 0.4);
+    border: 3px solid white;
+}
+
+/* Barra izquierda del icono de pausa */
+.aspect-video.video-playing::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-130%, -50%);
+    width: 10px;
+    height: 28px;
+    background: white;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Barra derecha del icono de pausa (elemento creado por JavaScript) */
+.pause-bar-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%, -50%);
+    width: 10px;
+    height: 28px;
+    background: white;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+/* Mostrar segunda barra cuando el video está reproduciéndose y hay hover */
+.aspect-video.video-playing:hover .pause-bar-right {
+    display: block;
+    opacity: 1;
+}
+
+/* Mostrar círculo y barra izquierda de pausa al hacer hover */
+.aspect-video.video-playing:hover::before,
+.aspect-video.video-playing:hover::after {
+    opacity: 1;
+}
+
+/* Animación de pulso para pausa */
+.aspect-video.video-playing:hover::before {
+    animation: pulsePlay 1.5s ease-in-out infinite;
+}
+
+/* Animación de pulso */
+@keyframes pulsePlay {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 1;
+    }
+}
